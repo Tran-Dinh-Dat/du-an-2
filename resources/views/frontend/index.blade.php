@@ -49,34 +49,12 @@
     <section>
         <div class="container">
             <div class="menu background slider">
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
-                <div class="sl">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    <p class="text2">Danh mục</p>
-                </div>
+                @foreach ($categories as $category)
+                    <div class="sl">
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        <p class="text2">{{$category->name}}</p>
+                    </div>
+                @endforeach
             </div>
             <div class="banner2">
             </div>
