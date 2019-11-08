@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Category;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $categories = Category::all();
         $request->user()->authorizeRoles(['user', 'admin']);
-        return view('frontend.index');
+        return view('frontend.index', compact('categories'));
     }
 }
