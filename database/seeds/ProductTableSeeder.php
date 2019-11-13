@@ -13,6 +13,10 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('products')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         Product::create([
             'category_id' => 1,
             'name' => 'ĐỒNG HỒ CASIO EQB-510D-1ADR',
