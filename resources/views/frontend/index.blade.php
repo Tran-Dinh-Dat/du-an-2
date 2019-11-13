@@ -71,7 +71,8 @@
                             <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
                                 alt="">
                         </div>
-                        <p class="proname">{{ $product->name}}</p>
+                        <a href=""><p class="proname">{{ $product->name}}</p></a>
+                        <a href=""><button class="btn btn-info">Add to cart</button></a>
                     </div>
                 @endforeach
                 
