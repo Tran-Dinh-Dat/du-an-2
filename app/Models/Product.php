@@ -14,8 +14,6 @@ class Product extends Model
         'sale', 
         'description',
         'quantity',
-        'view_id',
-        'image_id'
     ];
 
     public function category()
@@ -25,7 +23,7 @@ class Product extends Model
 
     public function view()
     {
-        return $this->hasMany(View::class);
+        return $this->hasOne(View::class);
     }
 
     public function image()

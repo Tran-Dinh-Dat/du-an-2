@@ -21,13 +21,13 @@ class CreateProductsTable extends Migration
             $table->float('sale');
             $table->float('quantity');
             $table->string('description')->nullable();
-            $table->integer('image_id')->unsigned(); 
-            $table->integer('view_id')->unsigned();
+            // $table->integer('image_id')->unsigned(); 
+            // $table->integer('view_id')->unsigned();
             $table->timestamps(); 
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
-            $table->foreign('view_id')->references('id')->on('views')->onDelete('cascade');
+            // $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            // $table->foreign('view_id')->references('id')->on('views')->onDelete('cascade');
         });
     }
 
