@@ -65,55 +65,17 @@
             <div class="sale1">Sale</div>
 
             <div class="product slider">
+                @foreach ($products as $product)
                 <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
+                        <div class="proimg">
+                            <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
+                                alt="">
+                        </div>
+                        <p class="proname">{{ $product->name}}</p>
                     </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
-                <div class="pro">
-                    <div class="proimg">
-                        <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
-                            alt="">
-                    </div>
-                    <p class="proname">San pham 1</p>
-                </div>
+                @endforeach
+                
+                
             </div>
 
         </div>
