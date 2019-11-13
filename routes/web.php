@@ -21,3 +21,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1', function () {
     return view('frontend.index');
 });
+
+Route::get('proDetail/{id}', 'HomeController@proDetail')->name('pro_detail');
+Route::get('getLoaisp/{id}', 'HomeController@getLoaisp')->name('get_loaisp');
+
+
+Route::resource('cart', 'CartController');
+Route::get('addCart/{id}', 'CartController@addCart')->name('addCart');
+
+
+Route::get('getadmin','adminController@getadmin')->name('getadmin');
+Route::get('list_category','adminController@list_category')->name('list_category');
+Route::get('add_category','adminController@add_category')->name('add_category');
+Route::post('addnewcategory','adminController@addnewcategory')->name('addnewcategory');
+Route::get('category_delete/{id}','adminController@category_delete')->name('category_delete');
+Route::get('category_edit/{id}','adminController@category_edit')->name('category_edit');
+Route::post('editcategory_save/{id}','adminController@editcategory_save')->name('editcategory_save');
+Route::get('list_product','adminController@list_product')->name('list_product');
+Route::get('add_product','adminController@add_product')->name('add_product');
+Route::post('add_product_save','adminController@add_product_save')->name('add_product_save');
+Route::get('product_detail/{id}','adminController@product_detail')->name('product_detail');

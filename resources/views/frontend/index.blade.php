@@ -52,7 +52,7 @@
                 @foreach ($categories as $category)
                     <div class="sl">
                         <i class="fa fa-gamepad" aria-hidden="true"></i>
-                        <p class="text2">{{$category->name}}</p>
+                        <a href="{{ Route('get_loaisp', ['id' => $category->id]) }}"><p class="text2">{{$category->name}}</p></a>
                     </div>
                 @endforeach
             </div>
@@ -71,8 +71,8 @@
                             <img src="https://www.dangquangwatch.vn/upload/product_small/1717990322_%C4%91%E1%BB%93ng-h%E1%BB%93-ch%C4%A9nh-h%C3%A3ng-4.jpg"
                                 alt="">
                         </div>
-                        <a href=""><p class="proname">{{ $product->name}}</p></a>
-                        <a href=""><button class="btn btn-info">Add to cart</button></a>
+                        <a href=" {{ Route('pro_detail', ['id' => $product->id])}}"><p class="proname">{{ $product->name}}</p></a>
+                        <a href="{{ Route('addCart', ['id' => $product->id]) }}"><button class="btn btn-info">Add to cart</button></a>
                     </div>
                 @endforeach
                 
