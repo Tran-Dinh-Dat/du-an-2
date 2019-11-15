@@ -1,18 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use Cart;
+
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Auth;
+use Cart;
+
 class CartController extends Controller
 {
     public function addCart(Request $request, $id)
     {
         $product = Product::find($id);
-        if($request->quantity) {
-            $quantity = $request->quantity;
+        if($request->qty) {
+            $qty = $request->quantity;
         } else {
-            $quantity = 1;
+            $qty = 1;
         }
 
         if ($product->sale > 0) {
@@ -23,12 +26,22 @@ class CartController extends Controller
         $cart = [
             'id' => $id,
             'name' => $product->name,
-            'qty' =>$product->quantity,
+            'qty' => $qty,
             'price' => $product->price,
-            'options' => [''],
+            'options' => [
+                'img' => $product->image
+            ],
         ];
 
         Cart::add($cart);
-        dd(Cart::content());
+        // dd(Cart::content());
+        return back()->with('success', 'Đã mua ' . $product->name . 'thành công!');
+    }
+
+    public function cart()
+    {
+        $cart = Cart::content();
+        // Cart::destroy();
+        return view('frontend.cart', compact('cart'));
     }
 }

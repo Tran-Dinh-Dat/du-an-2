@@ -22,6 +22,7 @@ class ProductTableSeeder extends Seeder
             'name' => 'ĐỒNG HỒ CASIO EQB-510D-1ADR',
             'price' => 12.308,
             'sale' => 0.1,
+            'image' => '1.jpg',
             'quantity' => 100,
             'description' => 'Hãng sản xuất: Đồng hồ Casio
                 Kiểu dáng: Đồng hồ nam
@@ -35,6 +36,7 @@ class ProductTableSeeder extends Seeder
             'name' => 'ĐỒNG HỒ EPOS SWISS E-7000.701.20.98.25',
             'price' => 13.000,
             'sale' => 0.1,
+            'image' => '1.jpg',
             'quantity' => 100,
             'description' => 'Thương hiệu: Thụy Sỹ
                 Xuất xứ: Thụy Sỹ
@@ -49,6 +51,7 @@ class ProductTableSeeder extends Seeder
             'name' => 'ĐỒNG HỒ DIAMOND D DM6305B5',
             'price' => 3.080,
             'sale' => 0.1,
+            'image' => '1.jpg',
             'quantity' => 100,
             'description' => 'Thương hiệu: Thụy Sỹ
                 Xuất xứ: Thụy Sỹ
