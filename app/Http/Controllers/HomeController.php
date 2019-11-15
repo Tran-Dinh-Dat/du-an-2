@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Image;
+use App\Models\Slideshow;
 class HomeController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -24,22 +26,31 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        //$request->user()->authorizeRoles(['user', 'admin']);
-        $products=Product::all();
-        // $product_top=Product::where('category_id','<>',1)->paginate(8);
-        $categories=Category::all();
-        return view('frontend.index',compact('products','categories'));
+        $request->user()->authorizeRoles(['user', 'admin']);
+        $products = Product::paginate(8);
+        $new_products = Product::orderBy('id', 'desc')->paginate(8);
+        $categories = Category::all();
+        $slideshows = Slideshow::all();  
+        return view('frontend.index',compact('products', 'new_products', 'categories', 'slideshows'));
     }
   
-    public function proDetail($id){
-        $product_detail=Product::find($id);
-        return view('frontend.proDetail',compact('product_detail'));
+    public function productDetail($id){
+        
+        $product_detail = Product::find($id);
+        $category = $product_detail->category;
+        $images = $product_detail->images;
+        $related_products = Product::with('category')->where('category_id', $category->id)->get();
+        return view('frontend.productDetail',compact('product_detail', 'category', 'images', 'related_products'));
     }
-    public function getLoaisp($type){
-        $sp_theoloai=Product::where('category_id',$type)->get();
-        $sp_khac=Product::where('category_id','<>',$type)->paginate(3);
-        $loai=Category::all();
-        $loai_s=Category::where('id',$type)->first();
-    	return view('frontend.loaisp',compact('sp_theoloai','sp_khac','loai','loai_s'));
+
+    public function categories($id = 'all'){
+        $categories = Category::all();
+        if ($id != 'all') {
+            $cate_products = Product::where('category_id', $id)->get();
+        } 
+        else {
+            $cate_products = Product::all();
+        }
+    	return view('frontend.categories',compact('categories', 'cate_products'));
     }
 }

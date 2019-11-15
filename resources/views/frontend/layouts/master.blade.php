@@ -1,105 +1,108 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>@yield('title')</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
-    <!-- stick -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/slick-1.8.1/slick/slick.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/slick-1.8.1/slick/slick-theme.css')}}">
+	<title>Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{asset('client/images/icons/favicon.png')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/fonts/themify/themify-icons.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/fonts/elegant-font/html-css/style.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/slick/slick.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/vendor/lightbox2/css/lightbox.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{asset('client/css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('client/css/main.css')}}">
+<!--===============================================================================================-->
 </head>
+<body class="animsition">
 
-<body>
+	<!-- Header -->
     @include('frontend.common.header')
-    @yield('content')
-    @include('frontend.common.footer')
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="{{asset('frontend/slick-1.8.1/slick/slick.js')}}" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(".menu").slick({
-            dots: false,
-            infinite: true,
-            centerMode: true,
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            autoplay: true,
-            infinite: true,
-            pauseOnHover: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3.5,
-                        slidesToScroll: 5,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3.4,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1.4,
-                        slidesToScroll: 1,
-                    }
-                }]
+    <!-- Content -->
+	@yield('content')
 
-        });
-        $(".product").slick({
-            dots: false,
-            infinite: true,
-            centerMode: true,
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            autoplay: true,
-            infinite: true,
-            pauseOnHover: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 5,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1.2,
-                        slidesToScroll: 1,
-                    }
-                }]
-        });
-    </script>
+	<!-- Footer -->
+	@include('frontend.common.footer')
+
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top bg0-hov" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</span>
+	</div>
+
+	<!-- Container Selection1 -->
+	<div id="dropDownSelect1"></div>
+
+
+
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/bootstrap/js/popper.js')}}"></script>
+	<script type="text/javascript" src="{{asset('client/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/select2/select2.min.js')}}"></script>
+	<script type="text/javascript">
+		$(".selection-1").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/slick/slick.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('client/js/slick-custom.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/lightbox2/js/lightbox.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{{asset('client/vendor/sweetalert/sweetalert.min.js')}}"></script>
+	<script type="text/javascript">
+		$('.block2-btn-addcart').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+
+		$('.block2-btn-addwishlist').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+			});
+		});
+	</script>
+
+<!--===============================================================================================-->
+	<script src="{{asset('client/js/main.js')}}"></script>
+
 </body>
-
 </html>
