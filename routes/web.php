@@ -18,16 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('home1', function () {
-    return view('frontend.index');
-});
-
-Route::get('proDetail/{id}', 'HomeController@proDetail')->name('pro_detail');
-Route::get('getLoaisp/{id}', 'HomeController@getLoaisp')->name('get_loaisp');
+Route::get('productDetail/{id}', 'HomeController@productDetail')->name('productDetail');
+Route::get('categories/{id?}', 'HomeController@categories')->name('categories');
 
 
-Route::resource('cart', 'CartController');
+// Route::resource('cart', 'CartController');
 Route::get('addCart/{id}', 'CartController@addCart')->name('addCart');
+Route::get('cart', 'CartController@cart')->name('cart');
+
 
 
 Route::get('getadmin','adminController@getadmin')->name('getadmin');
