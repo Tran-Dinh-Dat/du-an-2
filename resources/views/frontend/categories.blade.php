@@ -89,7 +89,7 @@
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="{{Route('productDetail', $item->id)}}" class="block2-name dis-block s-text3 p-b-5">
 											{{$item->name}}
 										</a>
 

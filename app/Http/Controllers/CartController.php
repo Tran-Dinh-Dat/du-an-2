@@ -43,5 +43,22 @@ class CartController extends Controller
         $cart = Cart::content();
         // Cart::destroy();
         return view('frontend.cart', compact('cart'));
+<<<<<<< HEAD
+=======
+    }
+
+    public function update(Request $request, $id)
+    {
+        if ($request->ajax()) {
+            Cart::update($id, $request->qty);
+            return  response()->json(['success', 'Cập nhật giỏ hàng thành công!']);
+        }
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        Cart::remove($id);
+        return response()->json(['success', 'Xóa sản phẩm thành công!']);
+>>>>>>> add cart and show product, category
     }
 }

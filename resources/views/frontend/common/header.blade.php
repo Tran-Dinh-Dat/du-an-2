@@ -30,7 +30,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
+				<a href="{{Route('home')}}" class="logo">
 					<img src="{{asset('client/images/icons/logo.png')}}" alt="IMG-LOGO">
 				</a>
 
@@ -39,7 +39,7 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="{{Route('home')}}">Home</a>
 								<ul class="sub_menu">
 									<li><a href="index.html">Homepage V1</a></li>
 									<li><a href="home-02.html">Homepage V2</a></li>
@@ -48,27 +48,19 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="{{Route('categories')}}">Shop</a>
 							</li>
 
 							<li class="sale-noti">
-								<a href="product.html">Sale</a>
+								<a href="{{Route('home')}}">Sale</a>
 							</li>
 
 							<li>
-								<a href="cart.html">Features</a>
+								<a href="{{Route('home')}}">About</a>
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
+								<a href="{{Route('home')}}">Contact</a>
 							</li>
 						</ul>
 					</nav>
