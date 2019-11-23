@@ -20,6 +20,7 @@
 							<th class="column-3">Giá</th>
 							<th class="column-4 p-l-70">Số lượng</th>
 							<th class="column-5">Tổng</th>
+							<th class="column-6"></th>
 						</tr>
                         @foreach ($cart as $key => $item)
                             <tr class="table-row">
@@ -36,14 +37,16 @@
                                             <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                         </button>
 
-                                        <input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="{{$item->qty}}">
-                                        <input type="hidden" value="{{$item->row_id}}">
+                                        <input class="size8 m-text18 t-center num-product qty" type="number" name="num-product1" value="{{$item->qty}}" data-id='{{$item->rowId}}'>
                                         <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
                                             <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
                                         </button>
                                     </div>
                                 </td>
-                                <td class="column-5">{{ $item->price * $item->qty}} đ</td>
+								<td class="column-5">{{ $item->price * $item->qty}} đ</td>
+								<td class="column-5">
+									<a href=""  data-id="{{$item->rowId}}" class="delete btn btn-danger">X</a>
+								</td>
                             </tr>
                         @endforeach
 					</table>

@@ -22,7 +22,7 @@ Route::get('productDetail/{id}', 'HomeController@productDetail')->name('productD
 Route::get('categories/{id?}', 'HomeController@categories')->name('categories');
 
 
-// Route::resource('cart', 'CartController');
+Route::resource('cart', 'CartController');
 Route::get('addCart/{id}', 'CartController@addCart')->name('addCart');
 Route::get('cart', 'CartController@cart')->name('cart');
 
