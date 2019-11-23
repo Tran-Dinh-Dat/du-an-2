@@ -7,6 +7,9 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\Slideshow;
+use App\Models\Profile;
+use App\Models\Comment;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -35,7 +38,6 @@ class HomeController extends Controller
     }
   
     public function productDetail($id){
-        
         $product_detail = Product::find($id);
         $category = $product_detail->category;
         $images = $product_detail->images;
@@ -52,5 +54,16 @@ class HomeController extends Controller
             $cate_products = Product::all();
         }
     	return view('frontend.categories',compact('categories', 'cate_products'));
+    }
+
+    public function comment(Request $request, $id)
+    {
+        $comment = Comment::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $id,
+            'content' => $request->content,
+            'status' => 1
+        ]);
+        return back();
     }
 }

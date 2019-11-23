@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('productDetail/{id}', 'HomeController@productDetail')->name('productDetail');
 Route::get('categories/{id?}', 'HomeController@categories')->name('categories');
+Route::post('comment/{id}', 'HomeController@comment')->name('comment');
 
 
 Route::resource('cart', 'CartController');

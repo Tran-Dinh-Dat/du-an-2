@@ -2358,7 +2358,13 @@
 .wrap-pic-w img {
 	width: 80%;
     margin: 0 auto;
-    display: block;}
+	display: block;
+}
+.img-detail img {
+	width: 60%;
+    margin: 0 auto;
+	display: block;
+}
 .wrap-pic-max-w img {max-width: 100%;}
 
 /* ------------------------------------ */

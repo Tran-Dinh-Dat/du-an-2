@@ -43,8 +43,6 @@ class CartController extends Controller
         $cart = Cart::content();
         // Cart::destroy();
         return view('frontend.cart', compact('cart'));
-<<<<<<< HEAD
-=======
     }
 
     public function update(Request $request, $id)
@@ -59,6 +57,5 @@ class CartController extends Controller
     {
         Cart::remove($id);
         return response()->json(['success', 'Xóa sản phẩm thành công!']);
->>>>>>> add cart and show product, category
     }
 }

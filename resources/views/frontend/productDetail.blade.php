@@ -26,14 +26,51 @@
 
 					<div class="slick3">
 						@foreach ($images as $item)
-						<div class="item-slick3" data-thumb="{{$item->image_url}}">
-							<div class="wrap-pic-w">
-								<img src="{{$item->image_url}}" alt="IMG-PRODUCT">
+						<div class="item-slick3" data-thumb="{{asset('client/images/'. $item->image_url)}}">
+							<div class="wrap-pic-w img-detail">
+								<img src="{{asset('client/images/'. $item->image_url)}}" alt="IMG-PRODUCT">
 							</div>
 						</div>
 						@endforeach
 					</div>
 				</div>
+
+				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content">
+						<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+							Bình luận
+							<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+							<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+						</h5>
+	
+						<div class="dropdown-content dis-none p-t-15 p-b-23">
+							<form action="{{Route('comment', $product_detail->id)}}" method="post">
+								@csrf
+								<div class="form-group">
+								  <input type="text"
+									class="form-control" name="content" id="" aria-describedby="helpId" placeholder="Nhận xét của bạn ...">
+								</div>
+								<button type="submit" class="btn btn-primary btn-small mb-3">Submit</button>
+							</form>
+							@foreach ($product_detail->comment as $item)
+							<div class="card mb-2">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-2">
+												<img src="{{asset('client/images/'. Auth::user()->profile->avatar )}}" class="img img-rounded img-fluid">
+												{{-- <p class="text-secondary text-center">{{$item->created_at}}</p> --}}
+											</div>
+											<div class="col-md-10">
+												<p>
+													<a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>{{Auth::user()->name}}</strong></a>
+												<div class="clearfix"></div>
+												<p>{{$item->content}}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							@endforeach
+						</div>
+					</div>
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">
@@ -92,21 +129,9 @@
 					</div>
 				</div>
 
-				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
-					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-						Additional information
-						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
-					</h5>
+				
 
-					<div class="dropdown-content dis-none p-t-15 p-b-23">
-						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
-						</p>
-					</div>
-				</div>
-
-				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
+				{{-- <div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
 					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
 						Reviews (0)
 						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
@@ -118,7 +143,7 @@
 							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
 						</p>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</div>
