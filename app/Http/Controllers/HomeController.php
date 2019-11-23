@@ -27,8 +27,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['user', 'admin']);
-        $products = Product::paginate(8);
-        $new_products = Product::orderBy('id', 'desc')->paginate(8);
+        $products = Product::with('view')->paginate(8);
+        $new_products = Product::with('view')->orderBy('id', 'desc')->paginate(8);
         $categories = Category::all();
         $slideshows = Slideshow::all();  
         return view('frontend.index',compact('products', 'new_products', 'categories', 'slideshows'));
