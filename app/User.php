@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->hasMany(Models\Contact::class);
     }
 
+    public function profile()
+    {
+        return $this->hasOne(Models\Profile::class);
+    }
+
     
     public function authorizeRoles($roles)
     {

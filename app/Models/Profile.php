@@ -16,6 +16,8 @@ class Profile extends Model
         'fullname'
     ];
 
+    public $table = 'profile';
+    
     public function user()
     {
         return $this->belongsTo(User::class);
