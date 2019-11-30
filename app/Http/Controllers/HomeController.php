@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\Slideshow;
+use App\Models\View;
 use App\Models\Profile;
 use App\Models\Comment;
 use Auth;
@@ -30,8 +31,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['user', 'admin']);
-        $products = Product::paginate(8);
-        $new_products = Product::orderBy('id', 'desc')->paginate(8);
+        $products = Product::with('view')->paginate(8);
+        $new_products = Product::with('view')->orderBy('id', 'desc')->paginate(8);
         $categories = Category::all();
         $slideshows = Slideshow::all();  
         return view('frontend.index',compact('products', 'new_products', 'categories', 'slideshows'));
@@ -42,6 +43,10 @@ class HomeController extends Controller
         $category = $product_detail->category;
         $images = $product_detail->images;
         $related_products = Product::with('category')->where('category_id', $category->id)->get();
+
+        $view = View::where('product_id',$id)->first();
+        $view->count +=1;
+        $view->save();
         return view('frontend.productDetail',compact('product_detail', 'category', 'images', 'related_products'));
     }
 

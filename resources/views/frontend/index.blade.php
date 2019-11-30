@@ -49,8 +49,7 @@
 
                             <div class="block2-overlay trans-0-4">
                                 <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                        {{$item->view['count']}}
                                 </a>
 
                                 <div class="block2-btn-addcart w-size1 trans-0-4">
@@ -104,8 +103,7 @@
     
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                        {{$item->view['count']}}
                                     </a>
     
                                     <div class="block2-btn-addcart w-size1 trans-0-4">
