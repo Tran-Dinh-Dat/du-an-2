@@ -22,13 +22,16 @@ Route::get('productDetail/{id}', 'HomeController@productDetail')->name('productD
 Route::get('categories/{id?}', 'HomeController@categories')->name('categories');
 Route::post('comment/{id}', 'HomeController@comment')->name('comment');
 
-
+// cart
 Route::resource('cart', 'CartController');
 Route::get('addCart/{id}', 'CartController@addCart')->name('addCart');
 Route::get('cart', 'CartController@cart')->name('cart');
 
+// profile
+Route::get('profile', 'ProfileController@index')->name('profile.index');
+Route::post('profile/{id}', 'ProfileController@update')->name('profile.update');
 
-
+// admin
 Route::get('getadmin','adminController@getadmin')->name('getadmin');
 Route::get('list_category','adminController@list_category')->name('list_category');
 Route::get('add_category','adminController@add_category')->name('add_category');

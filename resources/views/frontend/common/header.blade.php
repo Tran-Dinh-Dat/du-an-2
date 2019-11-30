@@ -68,10 +68,7 @@
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="{{asset('client/images/icons/icon-header-01.png')}}" class="header-icon1" alt="ICON">
-					</a>
-
+					<img src="{{asset('client/images/icons/icon-header-01.png')}}" class="header-icon1 js-show-header-dropdown1" alt="ICON">
 					<span class="linedivide1"></span>
 
 					<div class="header-wrapicon2">
@@ -150,6 +147,15 @@
 								</div>
 							</div>
 						</div>
+
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown1">
+							<u>
+								<li><a href="{{route('profile.index')}}">Thông tin tài khoản</a></li>
+								<li><a href="{{route('logout')}}">Đăng xuất</a></li>
+							</u>	
+						</div>
+
 					</div>
 				</div>
 			</div>

@@ -79,6 +79,44 @@
         sub_menu_is_showed = -1;
     });
 
+    /*[ Show header dropdown ]
+    ===========================================================*/
+    $('.js-show-header-dropdown1').on('click', function(){
+        $(this).parent().find('.header-dropdown1')
+    });
+
+    var menu = $('.js-show-header-dropdown1');
+    var sub_menu_is_showed = -1;
+
+    for(var i=0; i<menu.length; i++){
+        $(menu[i]).on('click', function(){ 
+            
+                if(jQuery.inArray( this, menu ) == sub_menu_is_showed){
+                    $(this).parent().find('.header-dropdown1').toggleClass('show-header-dropdown');
+                    sub_menu_is_showed = -1;
+                }
+                else {
+                    for (var i = 0; i < menu.length; i++) {
+                        $(menu[i]).parent().find('.header-dropdown1').removeClass("show-header-dropdown");
+                    }
+
+                    $(this).parent().find('.header-dropdown1').toggleClass('show-header-dropdown');
+                    sub_menu_is_showed = jQuery.inArray( this, menu );
+                }
+        });
+    }
+
+    $(".js-show-header-dropdown1, .header-dropdown1").click(function(event){
+        event.stopPropagation();
+    });
+
+    $(window).on("click", function(){
+        for (var i = 0; i < menu.length; i++) {
+            $(menu[i]).parent().find('.header-dropdown1').removeClass("show-header-dropdown");
+        }
+        sub_menu_is_showed = -1;
+    });
+
 
      /*[ Fixed Header ]
     ===========================================================*/

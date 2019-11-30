@@ -140,7 +140,6 @@ ul, li {
 /* ------------------------------------ */
 input {
 	outline: none;
-	border: none !important;
 }
 
 textarea {
@@ -2346,4 +2345,6 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0; 
 }
 
-
+.editprofile > .row {
+  margin-bottom: 5px;
+}
